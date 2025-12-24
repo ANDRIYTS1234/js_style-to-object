@@ -7,7 +7,7 @@
  */
 function convertToObject(sourceString) {
   // write your code here
-  const result = {};
+  const cssProperties = {};
 
   const properties = sourceString.split(';');
 
@@ -17,11 +17,11 @@ function convertToObject(sourceString) {
     const partsOfProperty = propertyCopy.split(':');
 
     if (partsOfProperty.length === 2) {
-      result[partsOfProperty[0].trim()] = partsOfProperty[1].trim();
+      cssProperties[partsOfProperty[0].trim()] = partsOfProperty[1].trim();
     }
   });
 
-  return result;
+  return cssProperties;
 }
 
 module.exports = convertToObject;
